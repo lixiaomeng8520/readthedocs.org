@@ -172,7 +172,13 @@ class CommunityBaseSettings(Settings):
     MEDIA_ROOT = os.path.join(SITE_ROOT, 'media/')
     MEDIA_URL = '/media/'
     ADMIN_MEDIA_PREFIX = '/media/admin/'
-    STATICFILES_DIRS = [os.path.join(SITE_ROOT, 'readthedocs', 'static')]
+    STATICFILES_DIRS = [
+        os.path.join(SITE_ROOT, 'readthedocs', 'static'),
+        ('legacy/css', os.path.join(SITE_ROOT, 'media', 'css')),
+        ('legacy/javascript', os.path.join(SITE_ROOT, 'media', 'javascript')),
+        ('legacy/images', os.path.join(SITE_ROOT, 'media', 'images')),
+        ('legacy/font', os.path.join(SITE_ROOT, 'media', 'font')),
+    ]
 
     TEMPLATES = [
         {
